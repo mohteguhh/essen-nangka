@@ -7,6 +7,7 @@
   
   <!-- ======================================================== -->
   <!-- META / FACEBOOK PIXEL BASE CODE                          -->
+  <!-- ID Meta Pixel: 508269054097890                           -->
   <!-- ======================================================== -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -18,10 +19,10 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Inisialisasi Meta Pixel ID pengguna
+    // Inisialisasi Meta Pixel ID Anda
     fbq('init', '508269054097890'); 
     
-    // Tracking Event: PageView (Pengunjung Membuka Halaman Web)
+    // Tracking Event 1: PageView (Pengunjung Membuka Halaman Web)
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -104,7 +105,7 @@
         <span class="text-2xl md:text-3xl">🐟</span>
         <span class="font-heading font-black text-xl md:text-2xl tracking-wider text-yellow-400">ESSEN <span class="text-emerald-400">NANGKA</span></span>
       </div>
-      <a href="#order-form" onclick="trackPurchaseEvent('Header Pesan Sekarang')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
+      <a href="#order-form" onclick="trackPurchaseEvent('Header Button')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
         <i class="fa-brands fa-whatsapp text-emerald-950"></i> PESAN SEKARANG
       </a>
     </div>
@@ -179,7 +180,7 @@
           Rp 130.000 <span class="text-xs font-normal text-slate-300">/ botol</span>
         </div>
 
-        <a href="#order-form" onclick="trackPurchaseEvent('Hero CTA Pesan Sekarang')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
+        <a href="#order-form" onclick="trackPurchaseEvent('Hero CTA Button')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
           <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON 50% & PESAN SEKARANG!
         </a>
 
@@ -389,18 +390,18 @@
         <!-- SIMPLIFIED FORM INPUTS -->
         <form id="checkout-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
           
-          <!-- PAKET PILIHAN -->
+          <!-- PAKET PILIHAN (DEFAULT TERPILIH: 1 BOTOL 130RB DISKON 50%) -->
           <div>
             <label class="block text-slate-300 font-bold text-sm mb-2">Pilih Paket Promo Essen Nangka:</label>
             <div class="grid grid-cols-1 gap-3">
               
-              <!-- PAKET 1 BOTOL -->
-              <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+              <!-- PAKET 1 BOTOL (DEFAULT CHECKED 130RB) -->
+              <label class="relative flex items-center justify-between p-4 bg-slate-950 border-2 border-yellow-400 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" checked class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
                     <span class="font-bold text-white text-sm block">1 Botol Essen Nangka (30ml)</span>
-                    <span class="text-xs text-slate-400">Diskon 50% Khusus Hari Ini</span>
+                    <span class="text-xs text-yellow-400 font-semibold">Diskon 50% Khusus Hari Ini</span>
                   </div>
                 </div>
                 <div class="text-right">
@@ -409,16 +410,13 @@
                 </div>
               </label>
 
-              <!-- PAKET 2 BOTOL (RECOMMENDED BEST SELLER) -->
-              <label class="relative flex items-center justify-between p-4 bg-slate-950 border-2 border-yellow-400 rounded-xl cursor-pointer hover:bg-slate-800 transition">
-                <div class="absolute -top-3 right-3 bg-yellow-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-full shadow">
-                  🔥 BEST SELLER (HEMAT 260 RIBU)
-                </div>
+              <!-- PAKET 2 BOTOL -->
+              <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="2 Botol (Rp 260.000 - Diskon 50%)" checked class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="2 Botol (Rp 260.000 - Diskon 50%)" class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
-                    <span class="font-bold text-white text-sm block">2 Botol Essen Nangka (60ml)</span>
-                    <span class="text-xs text-emerald-400 font-semibold">Diskon 50% (Rekomendasi Pemancing)</span>
+                    <span class="font-bold text-white text-sm block">2 Botol Essen Nangka (60ml) <span class="bg-emerald-700 text-white text-[10px] px-2 py-0.5 rounded font-extrabold">BEST SELLER</span></span>
+                    <span class="text-xs text-slate-400">Diskon 50% (Hemat Rp 260.000)</span>
                   </div>
                 </div>
                 <div class="text-right">
@@ -457,9 +455,9 @@
             <input type="tel" id="phone" required placeholder="Contoh: 089636492890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400">
           </div>
 
-          <!-- SUBMIT BUTTON DIRECT WA -->
+          <!-- SUBMIT BUTTON DIRECT WA (TRACKING PIXEL PURCHASE) -->
           <div class="pt-4">
-            <button type="submit" onclick="trackPurchaseEvent('Form Submit Pesan Melalui WA')" class="btn-pulse w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
+            <button type="submit" class="btn-pulse w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
               <i class="fa-brands fa-whatsapp text-2xl text-emerald-950"></i>
               <span>Pesan Melalui WA</span>
             </button>
@@ -498,10 +496,10 @@
   <!-- MOBILE STICKY BOTTOM BAR -->
   <div class="fixed bottom-0 inset-x-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-yellow-500/40 p-3 md:hidden shadow-2xl flex items-center justify-between gap-3">
     <div>
-      <span class="text-[10px] text-slate-400 block">Beli 2 Botol Diskon 50%</span>
-      <span class="font-heading font-black text-yellow-400 text-lg">Rp 260.000</span>
+      <span class="text-[10px] text-slate-400 block">Promo Diskon 50% Hari Ini</span>
+      <span class="font-heading font-black text-yellow-400 text-lg">Rp 130.000</span>
     </div>
-    <a href="#order-form" onclick="trackPurchaseEvent('Mobile Sticky Pesan Via WA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
+    <a href="#order-form" onclick="trackPurchaseEvent('Mobile Sticky CTA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
       <i class="fa-brands fa-whatsapp text-base text-emerald-950"></i> PESAN VIA WA
     </a>
   </div>
@@ -536,21 +534,21 @@
     startCountdown();
 
     // META PIXEL PURCHASE EVENT TRACKING FUNCTION
-    function trackPurchaseEvent(buttonLocation) {
+    function trackPurchaseEvent(locationName) {
       if (typeof fbq === 'function') {
         const packageRadio = document.querySelector('input[name="package"]:checked');
-        const packageName = packageRadio ? packageRadio.value : '2 Botol (Rp 260.000)';
+        const packageName = packageRadio ? packageRadio.value : '1 Botol (Rp 130.000)';
         
-        let packageValue = 260000;
-        if (packageName.includes('1 Botol')) packageValue = 130000;
-        if (packageName.includes('3 Botol')) packageValue = 360000;
+        let val = 130000;
+        if (packageName.includes('2 Botol')) val = 260000;
+        if (packageName.includes('3 Botol')) val = 360000;
 
-        // Mengirimkan Event 'Purchase' resmi ke Facebook Ads Manager
+        // Firing Event Purchase ke Meta Pixel
         fbq('track', 'Purchase', {
-          content_name: packageName,
-          value: packageValue,
+          content_name: 'Essen Nangka Juara - ' + packageName,
+          value: val,
           currency: 'IDR',
-          button_clicked: buttonLocation
+          button_location: locationName
         });
       }
     }
@@ -560,12 +558,12 @@
       e.preventDefault();
       
       const packageRadio = document.querySelector('input[name="package"]:checked');
-      const packageName = packageRadio ? packageRadio.value : '2 Botol (Rp 260.000)';
+      const packageName = packageRadio ? packageRadio.value : '1 Botol (Rp 130.000 - Diskon 50%)';
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
 
-      // Trigger Purchase Event saat form WA dikirim
-      trackPurchaseEvent('Form Checkout Direct WA');
+      // Trigger Pixel Event Purchase saat tombol "Pesan Melalui WA" diklik
+      trackPurchaseEvent('Form Checkout Submit');
 
       const adminWA = "6289636492890"; 
 

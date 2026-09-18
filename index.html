@@ -6,7 +6,7 @@
   <title>Essen Nangka Juara - Rahasia Umpan Gacor Strike Bertubi-tubi!</title>
   
   <!-- ======================================================== -->
-  <!-- META / FACEBOOK PIXEL BASE CODE                          -->
+  <!-- META / FACEBOOK PIXEL BASE CODE (HANYA PAGEVIEW)         -->
   <!-- ID Meta Pixel: 508269054097890                           -->
   <!-- ======================================================== -->
   <script>
@@ -22,7 +22,7 @@
     // Inisialisasi Meta Pixel ID Anda
     fbq('init', '508269054097890'); 
     
-    // Tracking Event 1: PageView (Pengunjung Membuka Halaman Web)
+    // Tracking Event Murni: PageView
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -91,7 +91,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-yellow-400 selection:text-black pb-24 md:pb-0">
 
-  <!-- TOP ANNOUNCEMENT BAR (URGENCY & FOMO) -->
+  <!-- TOP ANNOUNCEMENT BAR -->
   <div class="bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold tracking-wide uppercase shadow-lg flex items-center justify-center gap-2">
     <i class="fa-solid fa-fire animate-bounce text-yellow-300"></i>
     <span>PROMO DISKON 50% KHUSUS HARI INI! STOK TERBATAS SISA <span class="text-yellow-300 underline font-extrabold" id="stock-counter">7 BOTOL</span> LAGI!</span>
@@ -105,13 +105,13 @@
         <span class="text-2xl md:text-3xl">🐟</span>
         <span class="font-heading font-black text-xl md:text-2xl tracking-wider text-yellow-400">ESSEN <span class="text-emerald-400">NANGKA</span></span>
       </div>
-      <a href="#order-form" onclick="trackPurchaseEvent('Header Button')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
+      <a href="#order-form" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
         <i class="fa-brands fa-whatsapp text-emerald-950"></i> PESAN SEKARANG
       </a>
     </div>
   </header>
 
-  <!-- HERO SECTION (EMOTIONAL HOOK) -->
+  <!-- HERO SECTION -->
   <section class="relative bg-gradient-dark py-10 px-4 overflow-hidden border-b border-emerald-900/50">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       
@@ -170,6 +170,27 @@
         </div>
       </div>
 
+      <!-- VALUE JUSTIFICATION CARD: KENAPA HARGA 130RB SANGAT MURAH & HEMAT -->
+      <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 max-w-xl mx-auto mb-6 text-left shadow-lg">
+        <h3 class="font-heading font-extrabold text-base sm:text-lg text-yellow-400 mb-3 flex items-center gap-2">
+          <span>💡</span> <span>Apakah Harga Rp 130.000 Tergolong Mahal? Coba Hitung Ini!</span>
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="text-red-400 font-bold">✖</span>
+            <span>Sekali mancing **Zonk (tangan kosong)**: Sewa lapak Rp 50.000 - Rp 100.000 + Umpan racikan mahal terbuang sia-sia tanpa hasil.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">✔</span>
+            <span>1 Botol Essen Nangka (30ml) bisa dipakai hingga **30 - 50x sesi mancing**. Itu artinya biaya per mancing **hanya sekitar Rp 2.600 per sesi!**</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-yellow-400 font-bold">⭐</span>
+            <span>Cuma investasi kecil Rp 2.600 per sesi, Anda mendapat jaminan strike ikan babon, pulang tersenyum, dan jadi raja lapak di empang!</span>
+          </li>
+        </ul>
+      </div>
+
       <!-- PRICE CTA CARD -->
       <div class="bg-gradient-to-br from-emerald-950 to-slate-900 border border-emerald-500/40 rounded-2xl p-6 max-w-xl mx-auto shadow-2xl">
         <div class="flex items-center justify-center gap-3 mb-2">
@@ -180,7 +201,7 @@
           Rp 130.000 <span class="text-xs font-normal text-slate-300">/ botol</span>
         </div>
 
-        <a href="#order-form" onclick="trackPurchaseEvent('Hero CTA Button')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
+        <a href="#order-form" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
           <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON 50% & PESAN SEKARANG!
         </a>
 
@@ -390,12 +411,12 @@
         <!-- SIMPLIFIED FORM INPUTS -->
         <form id="checkout-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
           
-          <!-- PAKET PILIHAN (DEFAULT TERPILIH: 1 BOTOL 130RB DISKON 50%) -->
+          <!-- PAKET PILIHAN (DEFAULT 130RB DISKON 50%) -->
           <div>
             <label class="block text-slate-300 font-bold text-sm mb-2">Pilih Paket Promo Essen Nangka:</label>
             <div class="grid grid-cols-1 gap-3">
               
-              <!-- PAKET 1 BOTOL (DEFAULT CHECKED 130RB) -->
+              <!-- PAKET 1 BOTOL (DEFAULT CHECKED) -->
               <label class="relative flex items-center justify-between p-4 bg-slate-950 border-2 border-yellow-400 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
                   <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" checked class="w-4 h-4 text-yellow-400 accent-yellow-400">
@@ -455,7 +476,7 @@
             <input type="tel" id="phone" required placeholder="Contoh: 089636492890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400">
           </div>
 
-          <!-- SUBMIT BUTTON DIRECT WA (TRACKING PIXEL PURCHASE) -->
+          <!-- SUBMIT BUTTON DIRECT WA -->
           <div class="pt-4">
             <button type="submit" class="btn-pulse w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
               <i class="fa-brands fa-whatsapp text-2xl text-emerald-950"></i>
@@ -476,6 +497,10 @@
     <div class="max-w-3xl mx-auto">
       <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-center text-white mb-6">FAQ - Pertanyaan Umum</h2>
       <div class="space-y-4">
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <h3 class="font-bold text-yellow-400 text-sm sm:text-base">Q: Apakah harga Rp 130.000 sebanding dengan hasilnya?</h3>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Sangat sebanding! 1 botol isi 30ml bisa dipakai 30-50x mancing (hanya Rp 2.600 per sesi). Dibandingkan uang sewa lapak & umpan mahal yang terbuang percuma saat zonk, Essen ini justru menghemat pengeluaran Anda.</p>
+        </div>
         <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
           <h3 class="font-bold text-yellow-400 text-sm sm:text-base">Q: Apakah Essen ini bisa COD (Bayar Di Tempat)?</h3>
           <p class="text-xs sm:text-sm text-slate-300 mt-1">Bisa banget! Setelah klik "Pesan Melalui WA", Anda tinggal konfirmasi pengiriman COD dengan admin di WhatsApp.</p>
@@ -499,7 +524,7 @@
       <span class="text-[10px] text-slate-400 block">Promo Diskon 50% Hari Ini</span>
       <span class="font-heading font-black text-yellow-400 text-lg">Rp 130.000</span>
     </div>
-    <a href="#order-form" onclick="trackPurchaseEvent('Mobile Sticky CTA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
+    <a href="#order-form" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
       <i class="fa-brands fa-whatsapp text-base text-emerald-950"></i> PESAN VIA WA
     </a>
   </div>
@@ -533,26 +558,6 @@
     }
     startCountdown();
 
-    // META PIXEL PURCHASE EVENT TRACKING FUNCTION
-    function trackPurchaseEvent(locationName) {
-      if (typeof fbq === 'function') {
-        const packageRadio = document.querySelector('input[name="package"]:checked');
-        const packageName = packageRadio ? packageRadio.value : '1 Botol (Rp 130.000)';
-        
-        let val = 130000;
-        if (packageName.includes('2 Botol')) val = 260000;
-        if (packageName.includes('3 Botol')) val = 360000;
-
-        // Firing Event Purchase ke Meta Pixel
-        fbq('track', 'Purchase', {
-          content_name: 'Essen Nangka Juara - ' + packageName,
-          value: val,
-          currency: 'IDR',
-          button_location: locationName
-        });
-      }
-    }
-
     // WHATSAPP REDIRECT ACTION
     function handleFormSubmit(e) {
       e.preventDefault();
@@ -561,9 +566,6 @@
       const packageName = packageRadio ? packageRadio.value : '1 Botol (Rp 130.000 - Diskon 50%)';
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
-
-      // Trigger Pixel Event Purchase saat tombol "Pesan Melalui WA" diklik
-      trackPurchaseEvent('Form Checkout Submit');
 
       const adminWA = "6289636492890"; 
 

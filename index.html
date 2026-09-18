@@ -64,7 +64,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-yellow-400 selection:text-black pb-24 md:pb-0">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
+  <!-- TOP ANNOUNCEMENT BAR (URGENCY & FOMO) -->
   <div class="bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold tracking-wide uppercase shadow-lg flex items-center justify-center gap-2">
     <i class="fa-solid fa-fire animate-bounce text-yellow-300"></i>
     <span>PROMO DISKON 50% KHUSUS HARI INI! STOK TERBATAS SISA <span class="text-yellow-300 underline font-extrabold" id="stock-counter">7 BOTOL</span> LAGI!</span>
@@ -84,7 +84,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION (EMOTIONAL HOOK) -->
   <section class="relative bg-gradient-dark py-10 px-4 overflow-hidden border-b border-emerald-900/50">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       
@@ -147,14 +147,14 @@
       <div class="bg-gradient-to-br from-emerald-950 to-slate-900 border border-emerald-500/40 rounded-2xl p-6 max-w-xl mx-auto shadow-2xl">
         <div class="flex items-center justify-center gap-3 mb-2">
           <span class="text-slate-400 line-through text-lg sm:text-xl font-bold">Rp 260.000</span>
-          <span class="bg-red-600 text-white font-extrabold text-xs px-2.5 py-1 rounded">HEMAT 50%</span>
+          <span class="bg-red-600 text-white font-extrabold text-xs px-2.5 py-1 rounded">DISKON 50%</span>
         </div>
         <div class="text-3xl sm:text-5xl font-black text-yellow-400 font-heading mb-4 text-glow">
           Rp 130.000 <span class="text-xs font-normal text-slate-300">/ botol</span>
         </div>
 
         <a href="#order-form" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
-          <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON & PESAN SEKARANG!
+          <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON 50% & PESAN SEKARANG!
         </a>
 
         <div class="flex items-center justify-center gap-4 mt-4 text-xs sm:text-sm text-slate-300 font-medium">
@@ -264,7 +264,7 @@
     </div>
   </section>
 
-  <!-- PROOF SECTION (YOUTUBE SHORTS EMBED - FAST & LIGHTWEIGHT) -->
+  <!-- PROOF SECTION (YOUTUBE SHORTS EMBED) -->
   <section class="py-12 px-4 bg-slate-900 border-b border-slate-800">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
@@ -272,7 +272,7 @@
         <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white mt-3">Lihat Sendiri Hasil Strike Para Pemancing!</h2>
       </div>
 
-      <!-- YOUTUBE EMBEDDED SHORTS GRID (9:16 VERTICAL ASPECT RATIO) -->
+      <!-- YOUTUBE EMBEDDED SHORTS GRID -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         
         <!-- VIDEO 1 -->
@@ -363,17 +363,18 @@
         <!-- SIMPLIFIED FORM INPUTS -->
         <form id="checkout-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
           
-          <!-- PAKET PILIHAN -->
+          <!-- PAKET PILIHAN (BELI 1 DISKON 50%, BELI 2 DISKON 50%) -->
           <div>
-            <label class="block text-slate-300 font-bold text-sm mb-2">Pilih Paket Promo:</label>
-            <div class="grid grid-cols-1 gap-2.5">
+            <label class="block text-slate-300 font-bold text-sm mb-2">Pilih Paket Promo Essen Nangka:</label>
+            <div class="grid grid-cols-1 gap-3">
               
-              <label class="relative flex items-center justify-between p-3.5 bg-slate-950 border-2 border-yellow-400 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+              <!-- PAKET 1 BOTOL -->
+              <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="1 Botol (Rp 130.000)" checked class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
                     <span class="font-bold text-white text-sm block">1 Botol Essen Nangka (30ml)</span>
-                    <span class="text-xs text-slate-400">Promo Diskon 50%</span>
+                    <span class="text-xs text-slate-400">Diskon 50% Khusus Hari Ini</span>
                   </div>
                 </div>
                 <div class="text-right">
@@ -382,17 +383,36 @@
                 </div>
               </label>
 
-              <label class="relative flex items-center justify-between p-3.5 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+              <!-- PAKET 2 BOTOL (RECOMMENDED BEST SELLER) -->
+              <label class="relative flex items-center justify-between p-4 bg-slate-950 border-2 border-yellow-400 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                <div class="absolute -top-3 right-3 bg-yellow-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-full shadow">
+                  🔥 BEST SELLER (HEMAT 260 RIBU)
+                </div>
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="2 Botol (Rp 240.000)" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="2 Botol (Rp 260.000 - Diskon 50%)" checked onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
-                    <span class="font-bold text-white text-sm block">2 Botol Essen Nangka <span class="bg-emerald-700 text-white text-[10px] px-2 py-0.5 rounded font-extrabold">BEST SELLER</span></span>
-                    <span class="text-xs text-slate-400">Hemat Tambahan Rp 20.000</span>
+                    <span class="font-bold text-white text-sm block">2 Botol Essen Nangka (60ml)</span>
+                    <span class="text-xs text-emerald-400 font-semibold">Diskon 50% (Rekomendasi Pemancing)</span>
                   </div>
                 </div>
                 <div class="text-right">
-                  <span class="font-black text-yellow-400 text-base">Rp 240.000</span>
+                  <span class="font-black text-yellow-400 text-base">Rp 260.000</span>
                   <span class="block text-[10px] text-slate-500 line-through">Rp 520.000</span>
+                </div>
+              </label>
+
+              <!-- PAKET 3 BOTOL -->
+              <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="package" value="3 Botol (Rp 360.000 - Super Hemat)" onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <div>
+                    <span class="font-bold text-white text-sm block">3 Botol Essen Nangka (Stok Komunitas)</span>
+                    <span class="text-xs text-slate-400">Super Hemat (Diskon > 53%)</span>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="font-black text-yellow-400 text-base">Rp 360.000</span>
+                  <span class="block text-[10px] text-slate-500 line-through">Rp 780.000</span>
                 </div>
               </label>
 
@@ -452,8 +472,8 @@
   <!-- MOBILE STICKY BOTTOM BAR -->
   <div class="fixed bottom-0 inset-x-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-yellow-500/40 p-3 md:hidden shadow-2xl flex items-center justify-between gap-3">
     <div>
-      <span class="text-[10px] text-slate-400 block">Diskon 50% Hari Ini</span>
-      <span class="font-heading font-black text-yellow-400 text-lg">Rp 130.000</span>
+      <span class="text-[10px] text-slate-400 block">Beli 2 Botol Diskon 50%</span>
+      <span class="font-heading font-black text-yellow-400 text-lg">Rp 260.000</span>
     </div>
     <a href="#order-form" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
       <i class="fa-brands fa-whatsapp text-base text-emerald-950"></i> PESAN VIA WA

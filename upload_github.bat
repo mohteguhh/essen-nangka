@@ -14,18 +14,18 @@ git init
 git branch -M main
 
 echo.
-echo [2/4] Menghubungkan ke Repositori GitHub...
+echo [2/4] Menhubungkan ke Repositori GitHub...
 git remote remove origin 2>nul
 git remote add origin https://github.com/mohteguhh/essen-nangka.git
 
 echo.
-echo [3/4] Menyiapkan & Meng-commit Semua Berkas...
+echo [3/4] Menyiapkan dan Meng-commit Semua Berkas...
 git add .
-git commit -m "Auto Update: Landing Page Essen Nangka Juara"
+git commit -m "Auto Update: Landing Page Essen Nangka Juara" 2>nul
 
 echo.
-echo [4/4] Mengunggah (Push) ke GitHub Pages...
-git push -u origin main
+echo [4/4] Mengunggah (Push) ke GitHub...
+git push -u origin main --force
 
 echo.
 echo ========================================================
@@ -33,8 +33,7 @@ if %errorlevel% equ 0 (
     echo   [SUKSES] Berhasil diunggah ke GitHub!
     echo   Repository: https://github.com/mohteguhh/essen-nangka
 ) else (
-    echo   [INFO] Jika diminta login, silakan ikuti petunjuk
-    echo   login GitHub di jendela browser / terminal.
+    echo   [INFO] Jika ada kendala, pastikan koneksi internet aktif.
 )
 echo ========================================================
 echo.

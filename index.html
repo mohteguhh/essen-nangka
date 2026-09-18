@@ -264,7 +264,7 @@
     </div>
   </section>
 
-  <!-- PROOF SECTION (VIDEOS & UPDATED TESTIMONIALS) -->
+  <!-- PROOF SECTION (YOUTUBE SHORTS EMBED - FAST & LIGHTWEIGHT) -->
   <section class="py-12 px-4 bg-slate-900 border-b border-slate-800">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
@@ -272,37 +272,57 @@
         <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-white mt-3">Lihat Sendiri Hasil Strike Para Pemancing!</h2>
       </div>
 
-      <!-- VIDEO PROOFS -->
+      <!-- YOUTUBE EMBEDDED SHORTS GRID (9:16 VERTICAL ASPECT RATIO) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- VIDEO 1 -->
         <div class="bg-slate-950 rounded-2xl p-2 border border-slate-800 shadow-xl">
           <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-black">
-            <video controls preload="none" class="w-full h-full object-cover">
-              <source src="snaptik_7661874751782046984_v3.mp4" type="video/mp4">
-            </video>
+            <iframe 
+              src="https://www.youtube.com/embed/aqvk4ZrbhnA" 
+              title="Strike Babon Essen Nangka 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen 
+              loading="lazy" 
+              class="w-full h-full border-0">
+            </iframe>
           </div>
           <p class="text-xs text-center text-yellow-400 font-bold mt-2">🔥 Strike Babon Berturut-turut!</p>
         </div>
 
+        <!-- VIDEO 2 -->
         <div class="bg-slate-950 rounded-2xl p-2 border border-slate-800 shadow-xl">
           <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-black">
-            <video controls preload="none" class="w-full h-full object-cover">
-              <source src="snaptik_7679384434361126152_v3 (1).mp4" type="video/mp4">
-            </video>
+            <iframe 
+              src="https://www.youtube.com/embed/NcnXrNQlJqg" 
+              title="Strike Babon Essen Nangka 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen 
+              loading="lazy" 
+              class="w-full h-full border-0">
+            </iframe>
           </div>
           <p class="text-xs text-center text-yellow-400 font-bold mt-2">🔥 Umpan Disambar Tanpa Ampun!</p>
         </div>
 
+        <!-- VIDEO 3 -->
         <div class="bg-slate-950 rounded-2xl p-2 border border-slate-800 shadow-xl">
           <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-black">
-            <video controls preload="none" class="w-full h-full object-cover">
-              <source src="snaptik_7685367039850007815_v3.mp4" type="video/mp4">
-            </video>
+            <iframe 
+              src="https://www.youtube.com/embed/sk3D6bLE4zs" 
+              title="Strike Babon Essen Nangka 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen 
+              loading="lazy" 
+              class="w-full h-full border-0">
+            </iframe>
           </div>
           <p class="text-xs text-center text-yellow-400 font-bold mt-2">🔥 Panen Ikan Mas & Patin!</p>
         </div>
+
       </div>
 
-      <!-- UPDATED TESTIMONIAL SCREENSHOTS GRID -->
+      <!-- TESTIMONIAL SCREENSHOTS GRID -->
       <div class="text-center mb-6">
         <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-white mb-2">Testimoni & Chat Hasil Tangkapan Pelanggan</h3>
         <p class="text-slate-400 text-xs sm:text-sm">Tanggapan jujur pemancing mania yang sudah membuktikan kehebatannya</p>
@@ -469,7 +489,7 @@
     }
     startCountdown();
 
-    // WHATSAPP REDIRECT ACTION (Target: 089636492890)
+    // WHATSAPP REDIRECT ACTION
     function handleFormSubmit(e) {
       e.preventDefault();
       

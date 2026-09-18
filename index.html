@@ -7,7 +7,6 @@
   
   <!-- ======================================================== -->
   <!-- META / FACEBOOK PIXEL BASE CODE                          -->
-  <!-- Ganti YOUR_PIXEL_ID dengan ID Meta Pixel Anda          -->
   <!-- ======================================================== -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -19,10 +18,10 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Inisialisasi Meta Pixel ID Anda
+    // Inisialisasi Meta Pixel ID pengguna
     fbq('init', '508269054097890'); 
     
-    // Tracking Event 1: PageView (Pengunjung Membuka Halaman Web)
+    // Tracking Event: PageView (Pengunjung Membuka Halaman Web)
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -105,7 +104,7 @@
         <span class="text-2xl md:text-3xl">🐟</span>
         <span class="font-heading font-black text-xl md:text-2xl tracking-wider text-yellow-400">ESSEN <span class="text-emerald-400">NANGKA</span></span>
       </div>
-      <a href="#order-form" onclick="trackLeadEvent('Header Button')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
+      <a href="#order-form" onclick="trackPurchaseEvent('Header Pesan Sekarang')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
         <i class="fa-brands fa-whatsapp text-emerald-950"></i> PESAN SEKARANG
       </a>
     </div>
@@ -180,7 +179,7 @@
           Rp 130.000 <span class="text-xs font-normal text-slate-300">/ botol</span>
         </div>
 
-        <a href="#order-form" onclick="trackLeadEvent('Hero CTA Button')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
+        <a href="#order-form" onclick="trackPurchaseEvent('Hero CTA Pesan Sekarang')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
           <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON 50% & PESAN SEKARANG!
         </a>
 
@@ -460,7 +459,7 @@
 
           <!-- SUBMIT BUTTON DIRECT WA -->
           <div class="pt-4">
-            <button type="submit" class="btn-pulse w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
+            <button type="submit" onclick="trackPurchaseEvent('Form Submit Pesan Melalui WA')" class="btn-pulse w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
               <i class="fa-brands fa-whatsapp text-2xl text-emerald-950"></i>
               <span>Pesan Melalui WA</span>
             </button>
@@ -502,7 +501,7 @@
       <span class="text-[10px] text-slate-400 block">Beli 2 Botol Diskon 50%</span>
       <span class="font-heading font-black text-yellow-400 text-lg">Rp 260.000</span>
     </div>
-    <a href="#order-form" onclick="trackLeadEvent('Mobile Sticky CTA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
+    <a href="#order-form" onclick="trackPurchaseEvent('Mobile Sticky Pesan Via WA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
       <i class="fa-brands fa-whatsapp text-base text-emerald-950"></i> PESAN VIA WA
     </a>
   </div>
@@ -536,13 +535,22 @@
     }
     startCountdown();
 
-    // META PIXEL EVENT TRACKING FUNCTION
-    function trackLeadEvent(locationName) {
+    // META PIXEL PURCHASE EVENT TRACKING FUNCTION
+    function trackPurchaseEvent(buttonLocation) {
       if (typeof fbq === 'function') {
-        // Event 2: Contact / Lead (Calon Pembeli Mengklik Tombol Order WA)
-        fbq('track', 'Lead', {
-          content_name: 'Essen Nangka Juara Order',
-          button_location: locationName
+        const packageRadio = document.querySelector('input[name="package"]:checked');
+        const packageName = packageRadio ? packageRadio.value : '2 Botol (Rp 260.000)';
+        
+        let packageValue = 260000;
+        if (packageName.includes('1 Botol')) packageValue = 130000;
+        if (packageName.includes('3 Botol')) packageValue = 360000;
+
+        // Mengirimkan Event 'Purchase' resmi ke Facebook Ads Manager
+        fbq('track', 'Purchase', {
+          content_name: packageName,
+          value: packageValue,
+          currency: 'IDR',
+          button_clicked: buttonLocation
         });
       }
     }
@@ -556,14 +564,8 @@
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
 
-      // Trigger Meta Pixel Purchase / Lead Event saat form di-submit
-      if (typeof fbq === 'function') {
-        fbq('track', 'Purchase', {
-          content_name: packageName,
-          value: packageName.includes('1 Botol') ? 130000 : (packageName.includes('3 Botol') ? 360000 : 260000),
-          currency: 'IDR'
-        });
-      }
+      // Trigger Purchase Event saat form WA dikirim
+      trackPurchaseEvent('Form Checkout Direct WA');
 
       const adminWA = "6289636492890"; 
 

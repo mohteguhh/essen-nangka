@@ -4,6 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Essen Nangka Juara - Rahasia Umpan Gacor Strike Bertubi-tubi!</title>
+  
+  <!-- ======================================================== -->
+  <!-- META / FACEBOOK PIXEL BASE CODE                          -->
+  <!-- Ganti YOUR_PIXEL_ID dengan ID Meta Pixel Anda          -->
+  <!-- ======================================================== -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Inisialisasi Meta Pixel ID Anda (Silakan Ganti 000000000000000 dengan Pixel ID Anda)
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    
+    // Tracking Event 1: PageView (Pengunjung Membuka Halaman Web)
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- ======================================================== -->
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -78,7 +105,7 @@
         <span class="text-2xl md:text-3xl">🐟</span>
         <span class="font-heading font-black text-xl md:text-2xl tracking-wider text-yellow-400">ESSEN <span class="text-emerald-400">NANGKA</span></span>
       </div>
-      <a href="#order-form" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
+      <a href="#order-form" onclick="trackLeadEvent('Header Button')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs md:text-sm py-2 px-4 rounded-full shadow-md transition-all transform hover:scale-105 flex items-center gap-1">
         <i class="fa-brands fa-whatsapp text-emerald-950"></i> PESAN SEKARANG
       </a>
     </div>
@@ -153,7 +180,7 @@
           Rp 130.000 <span class="text-xs font-normal text-slate-300">/ botol</span>
         </div>
 
-        <a href="#order-form" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
+        <a href="#order-form" onclick="trackLeadEvent('Hero CTA Button')" class="btn-pulse inline-block w-full bg-gradient-gold hover:opacity-95 text-slate-950 font-heading font-black text-lg sm:text-xl py-4 px-6 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
           <i class="fa-brands fa-whatsapp text-2xl mr-2 text-emerald-950 align-middle"></i> KLAIM DISKON 50% & PESAN SEKARANG!
         </a>
 
@@ -363,7 +390,7 @@
         <!-- SIMPLIFIED FORM INPUTS -->
         <form id="checkout-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
           
-          <!-- PAKET PILIHAN (BELI 1 DISKON 50%, BELI 2 DISKON 50%) -->
+          <!-- PAKET PILIHAN -->
           <div>
             <label class="block text-slate-300 font-bold text-sm mb-2">Pilih Paket Promo Essen Nangka:</label>
             <div class="grid grid-cols-1 gap-3">
@@ -371,7 +398,7 @@
               <!-- PAKET 1 BOTOL -->
               <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="1 Botol (Rp 130.000 - Diskon 50%)" class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
                     <span class="font-bold text-white text-sm block">1 Botol Essen Nangka (30ml)</span>
                     <span class="text-xs text-slate-400">Diskon 50% Khusus Hari Ini</span>
@@ -389,7 +416,7 @@
                   🔥 BEST SELLER (HEMAT 260 RIBU)
                 </div>
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="2 Botol (Rp 260.000 - Diskon 50%)" checked onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="2 Botol (Rp 260.000 - Diskon 50%)" checked class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
                     <span class="font-bold text-white text-sm block">2 Botol Essen Nangka (60ml)</span>
                     <span class="text-xs text-emerald-400 font-semibold">Diskon 50% (Rekomendasi Pemancing)</span>
@@ -404,7 +431,7 @@
               <!-- PAKET 3 BOTOL -->
               <label class="relative flex items-center justify-between p-4 bg-slate-950 border border-slate-700 rounded-xl cursor-pointer hover:bg-slate-800 transition">
                 <div class="flex items-center gap-3">
-                  <input type="radio" name="package" value="3 Botol (Rp 360.000 - Super Hemat)" onchange="updateTotal()" class="w-4 h-4 text-yellow-400 accent-yellow-400">
+                  <input type="radio" name="package" value="3 Botol (Rp 360.000 - Super Hemat)" class="w-4 h-4 text-yellow-400 accent-yellow-400">
                   <div>
                     <span class="font-bold text-white text-sm block">3 Botol Essen Nangka (Stok Komunitas)</span>
                     <span class="text-xs text-slate-400">Super Hemat (Diskon > 53%)</span>
@@ -475,7 +502,7 @@
       <span class="text-[10px] text-slate-400 block">Beli 2 Botol Diskon 50%</span>
       <span class="font-heading font-black text-yellow-400 text-lg">Rp 260.000</span>
     </div>
-    <a href="#order-form" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
+    <a href="#order-form" onclick="trackLeadEvent('Mobile Sticky CTA')" class="bg-gradient-gold text-slate-950 font-heading font-black text-sm py-2.5 px-5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
       <i class="fa-brands fa-whatsapp text-base text-emerald-950"></i> PESAN VIA WA
     </a>
   </div>
@@ -509,13 +536,34 @@
     }
     startCountdown();
 
+    // META PIXEL EVENT TRACKING FUNCTION
+    function trackLeadEvent(locationName) {
+      if (typeof fbq === 'function') {
+        // Event 2: Contact / Lead (Calon Pembeli Mengklik Tombol Order WA)
+        fbq('track', 'Lead', {
+          content_name: 'Essen Nangka Juara Order',
+          button_location: locationName
+        });
+      }
+    }
+
     // WHATSAPP REDIRECT ACTION
     function handleFormSubmit(e) {
       e.preventDefault();
       
-      const packageName = document.querySelector('input[name="package"]:checked').value;
+      const packageRadio = document.querySelector('input[name="package"]:checked');
+      const packageName = packageRadio ? packageRadio.value : '2 Botol (Rp 260.000)';
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
+
+      // Trigger Meta Pixel Purchase / Lead Event saat form di-submit
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          content_name: packageName,
+          value: packageName.includes('1 Botol') ? 130000 : (packageName.includes('3 Botol') ? 360000 : 260000),
+          currency: 'IDR'
+        });
+      }
 
       const adminWA = "6289636492890"; 
 
